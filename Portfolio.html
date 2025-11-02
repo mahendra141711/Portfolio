@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kancharla Mahendra - Portfolio</title>
+
+    <!-- Font Awesome & Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ================= NAVBAR ================= */
+        .container {
+            background-color: rgb(45, 45, 218);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        h2 > a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            transition: all 0.4s linear;
+        }
+
+        .container > h2:hover > a {
+            color: rgb(255, 98, 0);
+            text-decoration: underline;
+        }
+
+        /* ================= HERO SECTION ================= */
+        .container1 {
+            height: 250px;
+            width: 100%;
+            position: relative;
+            background: linear-gradient(45deg, rgb(33, 164, 33), rgb(238, 131, 149), rgb(227, 203, 110));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .container1 h1 {
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: cyan;
+        }
+
+        .container1 h3 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
+        }
+
+        /* ================= SECTIONS ================= */
+        .container2 {
+            margin: 50px 200px;
+        }
+
+        .items {
+            width: 100%;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px black;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .items h2 {
+            text-align: center;
+            font-size: 25px;
+            color: #1a54c9;
+            margin-bottom: 10px;
+        }
+
+        .items p {
+            font-size: 17px;
+            text-align: justify;
+        }
+
+        /* ================= EDUCATION ================= */
+        nav .values {
+            background-color: #f9f9f9;
+            margin: 15px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .values:hover {
+            box-shadow: 0px 0px 20px rgb(237, 155, 155);
+        }
+
+        .values h3 {
+            color: #1a54c9;
+            margin-bottom: 5px;
+        }
+
+        /* ================= SKILLS ================= */
+        #d4 nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        #d4 .values {
+            background-color: #eaf2ff;
+            height: 50px;
+            width: 25%;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        /* ================= CONTACT ================= */
+        #d5 .child {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .child a {
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            background-color: #1a54c9;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .child a:hover {
+            background-color: rgb(255, 98, 0);
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            height: 60px;
+            background-color: #1a54c9;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* ================= RESPONSIVE DESIGN ================= */
+        @media (max-width: 768px) {
+            .container2 {
+                margin: 20px;
+            }
+
+            #d4 .values {
+                width: 40%;
+            }
+
+            .container1 h1 {
+                font-size: 35px;
+            }
+
+            .container1 h3 {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #d4 .values {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <h2><a href="#home">Home</a></h2>
+        <h2><a href="#about">About</a></h2>
+        <h2><a href="#d2">Education</a></h2>
+        <h2><a href="#d3">Projects</a></h2>
+        <h2><a href="#d4">Skills</a></h2>
+        <h2><a href="#d5">Contacts</a></h2>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container1" id="home">
+        <h1>Kancharla Mahendra</h1>
+        <h3><i class="fa-solid fa-graduation-cap" style="color: black;"></i> MCA | VSU Nellore</h3>
+        <h3><i class="fa-solid fa-phone" style="color: rgb(234, 66, 66);"></i> +91-9652681032 
+            <i class="fa-solid fa-envelope" style="padding-left: 20px; color: rgb(0, 110, 255);"></i> mahendramh678@gmail.com
+        </h3>
+    </div>
+
+    <!-- About & Other Sections -->
+    <div class="container2" id="about">
+        <!-- Objective -->
+        <div class="items" id="d1">
+            <h2>Objective</h2>
+            <p>Aspiring Software Developer with a strong foundation in object-oriented programming, and database management. Proficient in Python, SQL, and web technologies (HTML, CSS). Eager to apply academic knowledge and project experience to real-world development environments as a junior software developer.</p>
+        </div>
+
+        <!-- Education -->
+        <div class="items" id="d2">
+            <h2>Education</h2>
+            <nav>
+                <div class="values">
+                    <h3>MCA</h3>
+                    <p>Vikram Simhapuri University — 2025</p>
+                </div>
+                <div class="values">
+                    <h3>B.Sc (M.S.Cs)</h3>
+                    <p>Sri Venkateswara Degree College — 2023</p>
+                </div>
+                <div class="values">
+                    <h3>Senior Secondary (XII)</h3>
+                    <p>Sri Srinivasa Junior College — 2018</p>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Projects -->
+        <div class="items" id="d3">
+            <h2>Projects</h2>
+            <nav>
+                <div class="values">
+                    <h3 style="text-align: center;">Data Driven Text Processing and Visualization Using NLP and ML</h3>
+                    <p style="text-align: center;">Developed a text analysis system to process unstructured data using NLP, ML models for classification, Matplotlib and Seaborn for visualization. The system enables structured output and insightful visual reports from raw text data.</p>
+                </div>
+                <div class="values">
+                    <h3 style="text-align: center;">Portfolio Website</h3>
+                    <p style="text-align: center;">A personal portfolio website to showcase skills, projects, and contact information. Built with HTML, CSS, and JavaScript.</p>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Skills -->
+        <div class="items" id="d4">
+            <h2>Technical Skills</h2>
+            <nav>
+                <div class="values"><b>Python, Numpy, Pandas</b></div>
+                <div class="values"><b>SQL, MySQL, SQL Server</b></div>
+                <div class="values"><b>HTML, CSS, JavaScript</b></div>
+                <div class="values"><b>Matplotlib, Seaborn</b></div>
+                <div class="values"><b>Django</b></div>
+                <div class="values"><b>AWS, Google Cloud</b></div>
+                <div class="values"><b>GitHub (Version Control)</b></div>
+            </nav>
+        </div>
+
+        <!-- Contact -->
+        <div class="items" id="d5">
+            <h2>Contact</h2>
+            <nav>
+                <div class="child">
+                    <a href="mailto:mahendramah678@gmail.com" target="_blank"><i class="bi bi-envelope-at-fill" style="margin-right: 10px;"></i>Email</a>
+                    <a href="https://github.com/mahendra141711" target="_blank"><i class="bi bi-github" style="margin-right: 10px;"></i>GitHub</a>
+                    <a href="https://www.linkedin.com/in/mahendra141711/" target="_blank"><i class="bi bi-linkedin" style="margin-right: 10px;"></i>LinkedIn</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 Kancharla Mahendra. All Rights Reserved.
+    </div>
+</body>
+</html>
