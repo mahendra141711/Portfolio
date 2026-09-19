@@ -1,3 +1,78 @@
+from pathlib import Path
+
+src = Path("/mnt/data/Pasted text(20260919-102519).txt")
+html = src.read_text(encoding="utf-8")
+
+replacements = {
+    '<h3><i class="fa-solid fa-graduation-cap" style="color: black;"></i> MCA | VSU Nellore</h3>':
+    '<h3><i class="fa-solid fa-robot" style="color: black;"></i> MCA Graduate | AI Training & Robotics | Python & SQL</h3>',
+
+    '<h2>Objective</h2>':
+    '<h2>About Me</h2>',
+
+    '<p>Aspiring Software Developer with a strong foundation in object-oriented programming, and database management. Proficient in Python, SQL, and web technologies (HTML, CSS). Eager to apply academic knowledge and project experience to real-world development environments as a junior software developer.</p>':
+    '<p>I am an MCA graduate with professional experience in AI training, robotics operations, and data annotation. Currently working as a Robot Operations Associate, supporting AI training workflows through robotic operations, task-based data collection, annotation, and quality control. I have a strong technical foundation in Python, SQL, Django, JavaScript, NLP, and data processing. I am interested in opportunities related to Python development, software development, backend development, AI/ML, and data-related roles.</p>',
+
+    '<p>Vikram Simhapuri University — 2025</p>':
+    '<p>Vikrama Simhapuri University, Nellore — 2025</p>',
+
+    '<h3>Senior Secondary (XII)</h3>\n                    <p>Sri Srinivasa Junior College — 2018</p>':
+    '<h3>Intermediate (MPC)</h3>\n                    <p>Sri Srinivasa Junior College — 2020</p>',
+
+    '<!-- Projects -->':
+    '<!-- Experience -->\n        <div class="items" id="experience">\n            <h2>Experience</h2>\n            <nav>\n                <div class="values">\n                    <h3>Robot Operations Associate</h3>\n                    <p><b>PITCS — Deployed at SKILD MACHINES INDIA PVT LTD | 2026 – Present | Bengaluru</b></p>\n                    <p>• Operate robotic systems using handheld controllers to support AI training workflows.<br>• Perform robot-assisted tasks including object picking, placement, and manipulation according to SOPs.<br>• Collect structured training data for AI and robotics applications.<br>• Perform data annotation according to predefined labeling guidelines.<br>• Conduct Quality Control (QC) to verify data accuracy and consistency.<br>• Support AI training workflows through reliable task execution and data collection.</p>\n                </div>\n            </nav>\n        </div>\n\n        <!-- Projects -->',
+
+    'Data Driven Text Processing and Visualization Using NLP and ML':
+    'Data-Driven Text Processing and Visualization Using NLP',
+
+    'Developed a text analysis system to process unstructured data using NLP, ML models for classification, Matplotlib and Seaborn for visualization. The system enables structured output and insightful visual reports from raw text data.':
+    'Developed a Python-based text processing and visualization application using Streamlit. The application processes unstructured text and converts it into structured data using NLP techniques, including tokenization, lemmatization, POS tagging, stop-word identification, word-frequency analysis, WordClouds, and data visualization.',
+
+    '<p style="text-align: center;">Developed and deployed a Django-based Job Portal for IT, Non-IT, and walk-in interviews with admin-managed postings, deadlines, and hiring links. Includes job search, active/expired status handling, responsive UI, and cloud deployment on Render.</p>':
+    '<p style="text-align: center;">Developed and deployed a Django-based Job Portal for IT, Non-IT, and walk-in opportunities with admin-managed postings, deadlines, and hiring links. Includes job search, active/expired status handling, responsive UI, and cloud deployment on Render.</p>',
+
+    '<h2>Technical Skills</h2>':
+    '<h2>Technical Skills</h2>',
+
+    '<div class="values"><b>Python, Numpy, Pandas</b></div>':
+    '<div class="values"><b>Python, NumPy, Pandas</b></div>',
+
+    '<div class="values"><b>SQL, MySQL, SQL Server</b></div>':
+    '<div class="values"><b>SQL, MySQL, SQL Server, Oracle</b></div>',
+
+    '<div class="values"><b>HTML, CSS, JavaScript</b></div>':
+    '<div class="values"><b>HTML, CSS, JavaScript</b></div>',
+
+    '<div class="values"><b>Matplotlib, Seaborn</b></div>':
+    '<div class="values"><b>Matplotlib, Seaborn, Plotly</b></div>',
+
+    '<div class="values"><b>Django</b></div>':
+    '<div class="values"><b>Django, Streamlit</b></div>',
+
+    '<div class="values"><b>AWS, Google Cloud</b></div>':
+    '<div class="values"><b>NLP, spaCy</b></div>',
+
+    '<div class="values"><b>GitHub (Version Control)</b></div>':
+    '<div class="values"><b>Git, GitHub</b></div>',
+
+    '© 2025 Kancharla Mahendra. All Rights Reserved.':
+    '© 2026 Kancharla Mahendra. All Rights Reserved.'
+}
+
+for old, new in replacements.items():
+    if old not in html:
+        print("Missing:", old[:80])
+    html = html.replace(old, new)
+
+# Add Experience to navbar
+html = html.replace(
+    '<h2><a href="#d2">Education</a></h2>',
+    '<h2><a href="#d2">Education</a></h2>\n        <h2><a href="#experience">Experience</a></h2>'
+)
+
+out = Path("/mnt/data/mahendra_portfolio_updated.html")
+out.write_text(html, encoding="utf-8")
+print(f"Created: {out}")
 <!DOCTYPE html>
 <html lang="en">
 <head>
